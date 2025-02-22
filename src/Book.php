@@ -2,9 +2,9 @@
 // Book.php
 class Book {
     // Properties (Attributes)
-    public string $title;
-    public string $author;
-    public int $year;
+    private string $title;
+    private string $author;
+    private int $year;
 
     // Constructor (to initialize an object)
     public function __construct(string $title, string $author, int $year) {
@@ -17,4 +17,21 @@ class Book {
     public function getBookInfo(): string {
         return "{$this->title} by {$this->author}, published in {$this->year}.";
     }
+
+    // Title Getter
+    public function getTitle(): string {
+        return $this->title;
+    }
+
+    // Author Getter
+    public function getAuthor(): string {
+        return $this->author;
+    }
+
+    // Year Getter
+    public function getYear(): int {
+        return $this->year;
+    }
+
+    
 }
