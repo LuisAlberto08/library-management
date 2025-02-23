@@ -23,12 +23,14 @@ class Book {
         return $this->title;
     }
     // Title Setter
-    public function setTitle(): void{
-        if(empty($title)){
-            throw new Exception("Title cannot be empty");
+    public function setTitle(string $title): void {
+        $author = trim($title); // Remove extra spaces
+        if (empty($title)) {
+            throw new Exception("Title name cannot be empty.");
         }
         $this->title = $title;
     }
+    
 
      // Author Getter
      public function getAuthor(): string {
@@ -36,12 +38,14 @@ class Book {
     }
 
     // Author Setter
-    public function setAuthor(): void {
-        if(empty($author)){
-            throw new Exception("Author cannot be empty");
+    public function setAuthor(string $author): void {
+        $author = trim($author); // Remove extra spaces
+        if (empty($author)) {
+            throw new Exception("Author name cannot be empty.");
         }
         $this->author = $author;
     }
+    
 
     // Year Getter
     public function getYear(): int {
@@ -49,9 +53,9 @@ class Book {
     }
 
     // Year Setter
-    public function setYear(): void{
-        if(empty($year)){
-            throw new Exception(("Year cannot be empty"));
+    public function setYear(int $year): void {
+        if ($year <= 0) {
+            throw new Exception("Year must be a positive number.");
         }
         $this->year = $year;
     }
