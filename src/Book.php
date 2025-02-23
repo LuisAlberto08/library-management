@@ -22,10 +22,25 @@ class Book {
     public function getTitle(): string {
         return $this->title;
     }
+    // Title Setter
+    public function setTitle(): void{
+        if(empty($title)){
+            throw new Exception("Title cannot be empty");
+        }
+        $this->title = $title;
+    }
 
-    // Author Getter
-    public function getAuthor(): string {
+     // Author Getter
+     public function getAuthor(): string {
         return $this->author;
+    }
+
+    // Author Setter
+    public function setAuthor(): void {
+        if(empty($author)){
+            throw new Exception("Author cannot be empty");
+        }
+        $this->author = $author;
     }
 
     // Year Getter
@@ -33,5 +48,13 @@ class Book {
         return $this->year;
     }
 
-    
+    // Year Setter
+    public function setYear(): void{
+        if(empty($year)){
+            throw new Exception(("Year cannot be empty"));
+        }
+        $this->year = $year;
+    }
+
+
 }
